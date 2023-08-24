@@ -34,8 +34,7 @@ List * createList() {
     fprintf(stderr, "Error: No se pudo asignar memoria para la lista.");
     exit(1);
   }
-  newList  
-}
+
 
 void * firstList(List * list) {
     return NULL;
