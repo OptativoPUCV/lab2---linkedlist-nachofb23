@@ -33,7 +33,7 @@ List * createList() {
   if (newList == NULL) {
     fprintf(stderr, "Error: No se pudo asignar memoria para la lista.");
     exit(1);
-  }
+  };
 
 
 
