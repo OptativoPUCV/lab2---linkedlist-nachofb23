@@ -51,7 +51,7 @@ void * firstList(List * list) {
 void * nextList(List * list) {
   if (list->current == NULL) {
     return NULL;
-  };
+  }
 
   if (list->current->next != NULL) {
     list->current = list->current->next;
@@ -62,7 +62,17 @@ void * nextList(List * list) {
 }
 
 void * lastList(List * list) {
+  if (list->head == NULL) {
     return NULL;
+  }
+
+  Node* current = list->head;
+  while (current->next != NULL) {
+    current = current->next;
+  }
+
+  list->current = current;
+  return &(current->data);
 }
 
 void * prevList(List * list) {
