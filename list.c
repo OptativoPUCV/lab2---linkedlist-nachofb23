@@ -145,6 +145,13 @@ void * popCurrent(List * list) {
   } else {
     list->head = list->current->next;
   }
+
+  if (list ->current->next) {
+    list->current->next->prev = list->current->prev;
+  } else {
+    list->tail = list->current->prev;
+  }
+  
   free(toDelete);
   return data;
 }
