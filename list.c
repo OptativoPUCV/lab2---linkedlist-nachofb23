@@ -103,7 +103,6 @@ void pushFront(List * list, void * data) {
 }
 
 void pushBack(List * list, void * data) {
-
 }
 
 void pushCurrent(List * list, void * data) {
@@ -135,7 +134,18 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) {
+  if (list->current == NULL) {
     return NULL;
+  }
+  void* data = list->current->data;
+  Node* toDelete = list->current;
+
+  if (list->current->prev) {
+    list->current->prev->next = list->current->next;
+  } else {
+    list->head = list->current->next;
+  }
+  return data;
 }
 
 void cleanList(List * list) {
